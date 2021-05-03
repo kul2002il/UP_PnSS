@@ -1,6 +1,6 @@
 <?php
 
-class Model_Portfolio extends Model
+class  Model_Portfolio extends Model
 {
 	public function getData()
 	{

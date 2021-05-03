@@ -2,11 +2,6 @@
 
 class Controller_Portfolio extends Controller
 {
-	/*
-	public $model;
-	public $view;
-	*/
-
 	function __construct()
 	{
 		$this->model = new Model_Portfolio();
