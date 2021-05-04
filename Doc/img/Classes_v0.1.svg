@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="36cm" height="15cm" viewBox="59 336 701 281" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="60" y="340" width="125.5" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="60" y="340" width="125.5" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="122.75" y="360">Route</text>
+    <rect style="fill: #ffffff" x="60" y="368" width="125.5" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="60" y="368" width="125.5" height="8"/>
+    <rect style="fill: #ffffff" x="60" y="376" width="125.5" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="60" y="376" width="125.5" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="63" y="389.2"> start()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="63" y="405.2"> ErrorPage404()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="460" y="440" width="117.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="460" y="440" width="117.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="518.9" y="460">View</text>
+    <rect style="fill: #ffffff" x="460" y="468" width="117.8" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="460" y="468" width="117.8" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="463" y="481.2">-template_view</text>
+    <rect style="fill: #ffffff" x="460" y="488" width="117.8" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="460" y="488" width="117.8" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="463" y="501.2">+generate()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="460" y="340" width="87" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="460" y="340" width="87" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="503.5" y="360">Model</text>
+    <rect style="fill: #ffffff" x="460" y="368" width="87" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="460" y="368" width="87" height="8"/>
+    <rect style="fill: #ffffff" x="460" y="376" width="87" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="460" y="376" width="87" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="463" y="389.2">+getData()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="240" y="340" width="125.5" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="240" y="340" width="125.5" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="302.75" y="360">Controller</text>
+    <rect style="fill: #ffffff" x="240" y="368" width="125.5" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="240" y="368" width="125.5" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="243" y="381.2">+model</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="243" y="397.2">+view</text>
+    <rect style="fill: #ffffff" x="240" y="404" width="125.5" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="240" y="404" width="125.5" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="243" y="417.2">+__construct()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="243" y="433.2">+action_index()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="140" y="540" width="139.7" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="140" y="540" width="139.7" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="209.85" y="560">Controller_Main</text>
+    <rect style="fill: #ffffff" x="140" y="568" width="139.7" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="140" y="568" width="139.7" height="8"/>
+    <rect style="fill: #ffffff" x="140" y="576" width="139.7" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="140" y="576" width="139.7" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="143" y="589.2">+action_index()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="302.75,458.236 302.75,498 209.85,498 209.85,540 "/>
+    <polygon style="fill: #ffffff" points="310.75,458.236 302.75,442.236 294.75,458.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="310.75,458.236 302.75,442.236 294.75,458.236 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="320" y="540" width="170.3" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="320" y="540" width="170.3" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="405.15" y="560">Controller_Portfolio</text>
+    <rect style="fill: #ffffff" x="320" y="568" width="170.3" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="320" y="568" width="170.3" height="8"/>
+    <rect style="fill: #ffffff" x="320" y="576" width="170.3" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="320" y="576" width="170.3" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="323" y="589.2">+__construct()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="323" y="605.2">+action_index()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="302.75,458.236 302.75,498 405.15,498 405.15,540 "/>
+    <polygon style="fill: #ffffff" points="310.75,458.236 302.75,442.236 294.75,458.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="310.75,458.236 302.75,442.236 294.75,458.236 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="620" y="440" width="138.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="620" y="440" width="138.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="689.2" y="460">Model_Portfolio</text>
+    <rect style="fill: #ffffff" x="620" y="468" width="138.4" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="620" y="468" width="138.4" height="8"/>
+    <rect style="fill: #ffffff" x="620" y="476" width="138.4" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="620" y="476" width="138.4" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="623" y="489.2">+getData()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="565.236,354 689.2,354 689.2,440 "/>
+    <polygon style="fill: #ffffff" points="565.236,346 549.236,354 565.236,362 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="565.236,346 549.236,354 565.236,362 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="434.828,454 405.75,454 405.75,394 365.5,394 "/>
+    <polygon style="fill: #000000" points="460,454 446,458.8 432,454 446,449.2 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="460,454 446,458.8 432,454 446,449.2 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="407.75" y="420"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="428" y="450"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="369.5" y="390"></text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="434.828,354 405.75,354 405.75,378 365.5,378 "/>
+    <polygon style="fill: #ffffff" points="460,354 446,358.8 432,354 446,349.2 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="460,354 446,358.8 432,354 446,349.2 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="407.75" y="362"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="428" y="350"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="369.5" y="374"></text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="490.3,602 689.2,602 689.2,502.705 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="694.2,515.353 689.2,499.353 684.2,515.353 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="185.5,386 208.75,386 208.75,354 233.295,354 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="220.647,359 236.647,354 220.647,349 "/>
+  </g>
+</svg>

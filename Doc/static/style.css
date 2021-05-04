@@ -83,10 +83,17 @@ h2{
 	text-align: center;
 }
 
-p{
+:not(.title_page)>p{
 	line-height: 1.5;
 	text-indent: 1.25cm;
 	text-align: justify;
+}
+
+pre{
+	border: 1px solid black;
+	font-size: 12px;
+	tab-size: 4;
+	white-space: pre-wrap;
 }
 
 li{
@@ -102,6 +109,7 @@ li{
 }
 
 .img > p{
+	text-align: center;
 	font-size: 12pt;
 }
 

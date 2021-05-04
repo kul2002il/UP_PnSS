@@ -66,7 +66,6 @@ class Route
 			// здесь также разумнее было бы кинуть исключение
 			Route::ErrorPage404();
 		}
-
 	}
 
 	static function ErrorPage404()
@@ -74,6 +73,7 @@ class Route
 		$host = 'http://'.$_SERVER['HTTP_HOST'].'/';
 		header('HTTP/1.1 404 Not Found');
 		header("Status: 404 Not Found");
-		header('Location:'.$host.'404');
+		//header('Location:'.$host.'404');
+		header('Location: /error404');
 	}
 }
