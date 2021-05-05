@@ -16,5 +16,6 @@ class Model
 		$this->mysqli = $mysqli;
 	}
 
+	public function init(){}
 	public function getData(){}
 }
