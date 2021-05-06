@@ -9,16 +9,17 @@ class Form
 	public function __construct($name)
 	{
 		$this->formName = $name;
+		$keyForm = $this->newCorsKey();
 	}
 
-	public function setInput($nameForHuman, $name, $type="text", $plaseholder=null, $required = true)
+	public function addInput($nameForHuman, $name, $type="text", $pattern=null, $required = true)
 	{
 		$field = [
 			"nameForHuman" => $nameForHuman,
 			"name" => $name,
 			"type" => $type,
 			"required" => $required,
-			"plaseholder"=>$plaseholder
+			"pattern"=>$pattern
 		];
 		array_push($this->fields, $field);
 	}
@@ -34,14 +35,14 @@ class Form
 			"nameForHuman"
 		];
 		$idHtml = $this->formName . "_" . $id;
-		$str = "id = '$idHtml'";
-		foreach ($this->fields[id] as $key=>$value)
+		$str = "id='$idHtml'";
+		foreach ($this->fields[$id] as $key=>$value)
 		{
-			if (!in_array($key, $ignoreList) || !$value)
+			if (in_array($key, $ignoreList) || !$value)
 			{
 				continue;
 			}
-			$str += "$key='$value' ";
+			$str .= " $key='$value'";
 		}
 		return "<input $str>";
 	}
@@ -49,39 +50,41 @@ class Form
 	public function labelHtml($id)
 	{
 		$idHtml = $this->formName . "_" . $id;
-		$name = $this->fields[id]["nameForHuman"];
+		$name = $this->fields[$id]["nameForHuman"];
 		return "<label for='$idHtml'>$name</label>";
 	}
 
 	public function formHeaderHtml()
 	{
-		$keyForm = $this->newCorsKey();
 		return "<form method='post'>
-		<input type='hidden' name='cors' value='$keyForm'>";
+		<input type='hidden' name='cors' value='$this->keyForm'>";
 	}
 
 	private function newCorsKey()
 	{
+		/*
 		return $this->keyForm = md5(time());
+		/*/
+		return $this->keyForm = md5("Ключ, который постоянно меняется." . $this->formName);
+		//*/
 	}
 
-	public function formGenerate()
+	public function formHtml()
 	{
-		echo $this->formHeaderHtml() . "<table>";
+		$out = $this->formHeaderHtml() . "<table>";
 		foreach ($this->getKeys() as $key)
 		{
-			?>
+			$out .= "
 			<tr>
 				<td>
-					<?= $this->labelHtml()?>
+					". $this->labelHtml($key) ."
 				</td>
 				<td>
-					<?= $this->inputHtml()?>
+					". $this->inputHtml($key) ."
 				</td>
-			</tr>
-			<?php
+			</tr>";
 		}
-		?>
+		$out .= "
 		<tr>
 			<td></td>
 			<td>
@@ -89,28 +92,42 @@ class Form
 			</td>
 		</tr>
 		</table>
-		</form>
-		<?php
+		</form>";
+		return $out;
 	}
 
-	public function validate()
+	public function validate(&$out)
 	{
+		var_dump($_POST["cors"]);
+		var_dump($this->keyForm);
 		if($_POST["cors"] !== $this->keyForm) // Это не наша форма.
-			return -1;
-		$out = [];
+		{
+			/*
+			throw new Exception("Форма не прошла CORS проверку.");
+			/*/
+			return false;
+			//*/
+		}
+		$buffOut = [];
 		foreach ($this->fields as $key => $value)
 		{
 			if (!isset($_POST[$value["name"]]) && $value["required"] === true)
 			{
-				return -1; // Отсутствует обязательное поле.
+				throw new Exception("Отсутствует обязательное поле ${value["name"]}.");
 			}
 			$inputData = $_POST[$value["name"]];
-			if ($value["plaseholder"] &&
-				!preg_match($value["plaseholder"], $inputData) )
+			if ($value["pattern"] &&
+				!preg_match($value["pattern"], $inputData) )
 			{
-				return -1; // Входные данные не соостветствуют регулярному выражению.
+				throw new Exception("Неверное заполенное поле.\n" .
+					"Поле: {$value["name"]}.\n" .
+					"Регулярное выражение: {$value["pattern"]}.\n" .
+					"Данные: $inputData");
 			}
+			$buffOut = array_merge($buffOut, [$value["name"] => $inputData]);
 		}
-		return $out;
+
+		$out = $buffOut;
+		return true;
 	}
 }

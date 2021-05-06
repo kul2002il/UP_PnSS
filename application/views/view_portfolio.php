@@ -5,11 +5,12 @@
 	<tr><td>Год</td><td>Проект</td><td>Описание</td></tr>
 	<?php
 
-	foreach($data as $row)
+	foreach($data["data"] as $row)
 	{
-		echo '<tr><td>'.$row[0].'</td><td>'.$row[1].'</td><td>'.$row[2].'</td></tr>';
+		echo '<tr><td>'.$row[0].'</td><td>'.$row[1].'</td><td>'.$row[2].'</td></tr>' . "\n\t";
 	}
 
+	echo $data["formNew"];
 	?>
 </table>
 </p>
