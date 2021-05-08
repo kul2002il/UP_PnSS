@@ -23,6 +23,10 @@ class Controller_User extends Controller
 		if (isset($_POST["auth"]))
 		{
 			$res = $this->model->login($_POST);
+			if($res === true)
+			{
+				header('Location: /user');
+			}
 			array_push($messages, $res);
 		}
 		$this->view->generate('view_login.php');
@@ -35,5 +39,24 @@ class Controller_User extends Controller
 			unset($_SESSION["user"]);
 		}
 		header('Location: /user/login');
+	}
+
+	function action_register()
+	{
+		if(isset($_SESSION["user"]))
+		{
+			header('Location: /user');
+		}
+		global $messages;
+		if (isset($_POST["register"]))
+		{
+			$res = $this->model->register($_POST);
+			if($res === true)
+			{
+				header('Location: /user/login');
+			}
+			array_push($messages, $res);
+		}
+		$this->view->generate('view_register.php');
 	}
 }

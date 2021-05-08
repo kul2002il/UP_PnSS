@@ -18,7 +18,7 @@
 				$page = $matches[1];
 				?>
 				<li>
-					<a href="<?= $page ?>">
+					<a href="/<?= $page ?>">
 						<?= $page ?>
 					</a>
 				</li>
