@@ -19,6 +19,9 @@ if(isset($_SESSION["user"]) && in_array($_SESSION["user"]["role"], [
 				<?=$row["description"]?>
 			</div>
 			<div>
+				<a href="/news/comment/<?=$row["id"]?>">Подробнее</a>
+			</div>
+			<div>
 				<?=$row["date"]?>
 				<?php if($flagCanEdit) { ?>
 					<a href="/news/edit/<?=$row["id"]?>">Изменить</a>

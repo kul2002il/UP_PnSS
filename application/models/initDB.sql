@@ -24,6 +24,7 @@ CREATE TABLE includes_role(
 	FOREIGN KEY (user) REFERENCES users (id) ON DELETE CASCADE
 );
 
+
 CREATE TABLE portfolio(
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	year INT NOT NULL,
@@ -31,11 +32,23 @@ CREATE TABLE portfolio(
 	description TEXT NOT NULL
 );
 
+
 CREATE TABLE news(
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	date DATETIME NOT NULL DEFAULT NOW(),
 	title VARCHAR(80) NOT NULL,
 	description TEXT NOT NULL
+);
+
+CREATE TABLE comments(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	date DATETIME NOT NULL DEFAULT NOW(),
+	news INT NOT NULL,
+	user INT NOT NULL,
+	text TEXT NOT NULL,
+
+	FOREIGN KEY (news) REFERENCES news (id) ON DELETE CASCADE,
+	FOREIGN KEY (user) REFERENCES users (id) ON DELETE CASCADE
 );
 
 
@@ -70,4 +83,35 @@ INSERT INTO news (title, description) VALUES
 ),(
 	"Кавычки!",
 	"Можно использовать двойные кавычки вместо одинарных в скриптах SQL запросов. Проверено."
+);
+
+INSERT INTO comments (news, user, text) VALUES
+(
+	1,
+	1,
+	"Комментарии тоже стартуют"
+),(
+	1,
+	2,
+	"Ура!"
+),(
+	1,
+	3,
+	"Сайт фигня, удаляюсь."
+),(
+	2,
+	2,
+	"Наконец-то узнаю! Всегда было интересно, но всё руки недоходили."
+),(
+	2,
+	3,
+	"Лентяй!"
+),(
+	3,
+	2,
+	"Да! Я знал это!"
+),(
+	2,
+	3,
+	"Дебыла кусок, это все знали!"
 );

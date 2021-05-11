@@ -15,6 +15,4 @@ class Model
 		}
 		$this->mysqli = $mysqli;
 	}
-
-	public function getData(){}
 }

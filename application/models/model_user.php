@@ -10,8 +10,8 @@ class Model_User extends Model
 		{
 			return "Нет обязательных полей.";
 		}
-		if (!preg_match("#[a-zA-Z0-9_.!@]+#", $data["login"]) ||
-			!preg_match("#[a-zA-Z0-9_.!@]{4,}#", $data["password"])
+		if (!preg_match("#[a-zA-Z0-9_.!@]{3,80}#", $data["login"]) ||
+			!preg_match("#[a-zA-Z0-9_.!@]{4,80}#", $data["password"])
 			)
 		{
 			return "Ошибка валидации";
@@ -22,7 +22,7 @@ class Model_User extends Model
 		$password = crypt($data["password"] , $passwordSalt);
 
 		$res = $this->mysqli->query("
-SELECT login,
+SELECT id, login,
 (
 	SELECT
 	(
