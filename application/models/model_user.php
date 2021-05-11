@@ -2,6 +2,34 @@
 
 class Model_User extends Model
 {
+	function getAll()
+	{
+		$res = $this->mysqli->query("
+SELECT id, login,
+(
+	SELECT
+	(
+		SELECT name FROM roles
+		WHERE id = role
+	)
+	FROM includes_role WHERE user = id
+) AS 'role'
+FROM users;
+		");
+		return $res;
+	}
+
+	function setRole($data)
+	{
+		$user = (int)$data["user"];
+		$role = $data["role"];
+		if (!preg_match("^[a-zA-Z0-9_]*$", $role))
+		{
+			return "Роль не валидна.";
+		}
+		return true;
+	}
+
 	function login($data)
 	{
 		if (!isset($data["login"]) ||

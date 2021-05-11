@@ -17,6 +17,28 @@ class Controller_User extends Controller
 		$this->view->generate('view_user.php');
 	}
 
+	public function action_all()
+	{
+		global $messages;
+		if(isset($_POST["setRole"]))
+		{
+			if(!isset($_SESSION["user"]) || $_SESSION["user"]["role"]!=="superuser")
+			{
+				array_push($messages, "Только superuser может назначать роль.");
+				$data = $this->model->getAll();
+				$this->view->generate('view_user_all.php', $data);
+				return;
+			}
+			$res = $this->model->setRole($_POST);
+			if($res !== true)
+			{
+				array_push($messages, $res);
+			}
+		}
+		$data = $this->model->getAll();
+		$this->view->generate('view_user_all.php', $data);
+	}
+
 	function action_login()
 	{
 		global $messages;
