@@ -2,14 +2,61 @@
 
 class Controller_User extends Controller
 {
-	/*
-	function action_index()
+	function __construct()
 	{
-		$this->view->generate('view_error404.php');
+		parent::__construct();
+		$this->model = new Model_User();
 	}
-	*/
+
+	public function action_index()
+	{
+		if(!isset($_SESSION["user"]))
+		{
+			header('Location: /user/login');
+		}
+		$this->view->generate('view_user.php');
+	}
+
 	function action_login()
 	{
-		$this->view->generate('view_error404.php');
+		global $messages;
+		if (isset($_POST["auth"]))
+		{
+			$res = $this->model->login($_POST);
+			if($res === true)
+			{
+				header('Location: /user');
+			}
+			array_push($messages, $res);
+		}
+		$this->view->generate('view_login.php');
+	}
+
+	function action_logout()
+	{
+		if(isset($_SESSION["user"]))
+		{
+			unset($_SESSION["user"]);
+		}
+		header('Location: /user/login');
+	}
+
+	function action_register()
+	{
+		if(isset($_SESSION["user"]))
+		{
+			header('Location: /user');
+		}
+		global $messages;
+		if (isset($_POST["register"]))
+		{
+			$res = $this->model->register($_POST);
+			if($res === true)
+			{
+				header('Location: /user/login');
+			}
+			array_push($messages, $res);
+		}
+		$this->view->generate('view_register.php');
 	}
 }

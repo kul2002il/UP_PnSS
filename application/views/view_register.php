@@ -1,4 +1,4 @@
-<h1>Вход</h1>
+<h1>Регистрация</h1>
 <form method="post">
 	<table>
 		<tr>
@@ -18,9 +18,17 @@
 			</td>
 		</tr>
 		<tr>
+			<td>
+				<label for="password2">Повтор пароля</label>
+			</td>
+			<td>
+				<input type="password" name="password2" id="password2" pattern="[a-zA-Z0-9_.!@]{4,}" required>
+			</td>
+		</tr>
+		<tr>
 			<td></td>
 			<td>
-				<input type="submit" name="auth" value="Вход">
+				<input type="submit" name="register" value="Регистрация">
 			</td>
 		</tr>
 	</table>
