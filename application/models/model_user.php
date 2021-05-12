@@ -23,10 +23,73 @@ FROM users;
 	{
 		$user = (int)$data["user"];
 		$role = $data["role"];
-		if (!preg_match("^[a-zA-Z0-9_]*$", $role))
+		if (!preg_match("#^[a-zA-Z0-9_]*$#", $role))
 		{
 			return "Роль не валидна.";
 		}
+
+		if ($role === "")
+		{
+			$res = $this->mysqli->query("
+				DELETE FROM includes_role WHERE user = $user;
+			");
+			if (!$res)
+			{
+				return "Разжалование провалилось по причине БД " . $this->mysqli->errno . ": " . $this->mysqli->error;
+			}
+			return "Связь удалена";
+			return true;
+		}
+
+		$res = $this->mysqli->query("
+			SELECT
+				id
+				FROM roles
+			WHERE name = '$role';
+		");
+
+		$res = $res->fetch_assoc();
+		if (!$res)
+		{
+			return "Роль '$role' не найдена: " . $this->mysqli->errno . ": " . $this->mysqli->error;
+		}
+
+		$role = $res["id"];
+
+		$includer = $this->mysqli->query("
+			SELECT role
+			FROM includes_role
+			WHERE user = $user;
+		");
+
+		$includer = $includer->fetch_assoc();
+
+		if ($includer)
+		{
+			$res = $this->mysqli->query("
+				UPDATE includes_role SET
+				role = $role
+				WHERE user = $user;
+			");
+			if (!$res)
+			{
+				return "Роль не назначена: " . $this->mysqli->errno . ": " . $this->mysqli->error;
+			}
+			return "Связь изменена";
+		}
+		else
+		{
+			$res = $this->mysqli->query("
+				INSERT INTO includes_role (role, user) VALUES
+				($role, $user);
+			");
+			if (!$res)
+			{
+				return "Роль не присвоена: " . $this->mysqli->errno . ": " . $this->mysqli->error;
+			};
+			return "Создана новая связь";
+		}
+
 		return true;
 	}
 

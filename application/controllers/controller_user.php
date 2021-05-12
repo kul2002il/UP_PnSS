@@ -25,14 +25,18 @@ class Controller_User extends Controller
 			if(!isset($_SESSION["user"]) || $_SESSION["user"]["role"]!=="superuser")
 			{
 				array_push($messages, "Только superuser может назначать роль.");
-				$data = $this->model->getAll();
-				$this->view->generate('view_user_all.php', $data);
-				return;
 			}
-			$res = $this->model->setRole($_POST);
-			if($res !== true)
+			else
 			{
-				array_push($messages, $res);
+				$res = $this->model->setRole($_POST);
+				if($res !== true)
+				{
+					array_push($messages, $res);
+				}
+				else
+				{
+					array_push($messages, "Успешно.");
+				}
 			}
 		}
 		$data = $this->model->getAll();
