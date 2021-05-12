@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="26cm" height="42cm" viewBox="-101 -1 516 822" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="0.588203,340.588 0.588203,540.294 0,540.294 0,780 "/>
+  <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="0,40 0,41 0.588203,239 0.588203,240 "/>
+  <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="101.176,290.294 200,290.294 200,500.807 201.613,500.807 "/>
+  <g>
+    <path style="fill: #ffffff" d="M -26.6667 0 L 26.6667,0 C 34.0305,0 40,8.9543 40,20 C 40,31.0457 34.0305,40 26.6667,40 L -26.6667,40 C -34.0305,40 -40,31.0457 -40,20 C -40,8.9543 -34.0305,0 -26.6667,0z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M -26.6667 0 L 26.6667,0 C 34.0305,0 40,8.9543 40,20 C 40,31.0457 34.0305,40 26.6667,40 L -26.6667,40 C -34.0305,40 -40,31.0457 -40,20 C -40,8.9543 -34.0305,0 -26.6667,0"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-4.44089e-015" y="25">
+      <tspan x="-4.44089e-015" y="25">Начало</tspan>
+    </text>
+  </g>
+  <g>
+    <polygon style="fill: #ffffff" points="-64.2324,60 88.6912,60 74.1324,100 -78.7912,100 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-64.2324,60 88.6912,60 74.1324,100 -78.7912,100 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="4.95" y="84.8">
+      <tspan x="4.95" y="84.8">Запрос пользователя</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-86.55" y="180" width="183" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-86.55" y="180" width="183" height="38"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="4.95" y="203.8">
+      <tspan x="4.95" y="203.8">Вызов метода контроллера</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-47.55" y="120" width="105" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-47.55" y="120" width="105" height="38"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="4.95" y="143.8">
+      <tspan x="4.95" y="143.8">Экстракт пути</tspan>
+    </text>
+  </g>
+  <g>
+    <polygon style="fill: #ffffff" points="0.588203,240 101.176,290.294 0.588203,340.588 -100,290.294 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="0.588203,240 101.176,290.294 0.588203,340.588 -100,290.294 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="0.588203" y="287.094">
+      <tspan x="0.588203" y="287.094">В запросе</tspan>
+      <tspan x="0.588203" y="303.094">есть действие?</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-90" y="660" width="189.9" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-90" y="660" width="189.9" height="38"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="4.95" y="683.8">
+      <tspan x="4.95" y="683.8">Получить данные из модели</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-73.3" y="711" width="156.5" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-73.3" y="711" width="156.5" height="38"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="4.95" y="734.8">
+      <tspan x="4.95" y="734.8">Рендер представления</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: #ffffff" d="M -26.6667 780 L 26.6667,780 C 34.0305,780 40,788.954 40,800 C 40,811.046 34.0305,820 26.6667,820 L -26.6667,820 C -34.0305,820 -40,811.046 -40,800 C -40,788.954 -34.0305,780 -26.6667,780z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M -26.6667 780 L 26.6667,780 C 34.0305,780 40,788.954 40,800 C 40,811.046 34.0305,820 26.6667,820 L -26.6667,820 C -34.0305,820 -40,811.046 -40,800 C -40,788.954 -34.0305,780 -26.6667,780"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-4.44089e-015" y="805">
+      <tspan x="-4.44089e-015" y="805">Конец</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="158.788" y="340" width="85.65" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="158.788" y="340" width="85.65" height="38"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="201.613" y="363.8">
+      <tspan x="201.613" y="363.8">Валидация</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="154.938" y="400" width="93.35" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="154.938" y="400" width="93.35" height="38"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="201.613" y="423.8">
+      <tspan x="201.613" y="423.8">Запрос к БД</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="260" y="540" width="153.2" height="54"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="260" y="540" width="153.2" height="54"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="336.6" y="563.8">
+      <tspan x="336.6" y="563.8">Отправить сообщение</tspan>
+      <tspan x="336.6" y="579.8">на рендер</tspan>
+    </text>
+  </g>
+  <g>
+    <polygon style="fill: #ffffff" points="201.613,460 283.226,500.807 201.613,541.613 120,500.807 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="201.613,460 283.226,500.807 201.613,541.613 120,500.807 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="201.613" y="497.607">
+      <tspan x="201.613" y="497.607">Есть</tspan>
+      <tspan x="201.613" y="513.607">ошибки?</tspan>
+    </text>
+  </g>
+  <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="336.6,540 336.6,500 283.226,500 283.226,500.807 "/>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="201.613,541.613 201.613,640 4.47214,640 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="12.2361,635 2.23607,640 12.2361,645 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="336.6,594 336.6,620 204.472,620 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="212.236,615 202.236,620 212.236,625 "/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="120" y="280">
+    <tspan x="120" y="280">Да</tspan>
+  </text>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="20" y="360">
+    <tspan x="20" y="360">Нет</tspan>
+  </text>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="300" y="480">
+    <tspan x="300" y="480">Да</tspan>
+  </text>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="220" y="560">
+    <tspan x="220" y="560">Нет</tspan>
+  </text>
+</svg>
