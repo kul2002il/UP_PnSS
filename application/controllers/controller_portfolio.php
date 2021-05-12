@@ -38,6 +38,11 @@ class Controller_Portfolio extends Controller
 
 	public function action_edit($index = null)
 	{
+		if (!isset($_SESSION["user"]))
+		{
+			header('Location: /user/login');
+			return;
+		}
 		if (!$index)
 		{
 			header('Location: /portfolio/add');

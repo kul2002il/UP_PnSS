@@ -41,3 +41,6 @@ if(isset($_SESSION["user"]) && in_array($_SESSION["user"]["role"], [
 	<?php } ?>
 </table>
 </p>
+<?php if($flagCanEdit) { ?>
+<a href="/portfolio/add">Добавить</a>
+<?php } ?>
