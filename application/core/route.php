@@ -59,7 +59,14 @@ class Route
 		if(method_exists($controller, $action))
 		{
 			// вызываем действие контроллера
-			$controller->$action();
+			if ( !empty($routes[3]) )
+			{
+				$controller->$action($routes[3]);
+			}
+			else
+			{
+				$controller->$action();
+			}
 		}
 		else
 		{

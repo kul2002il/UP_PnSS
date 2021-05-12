@@ -104,10 +104,10 @@ $files = getBranch("..");
 		<div>
 			<h2>Ход работы</h2>
 
-			<h3>Схема работы MVC модели</h3>
+			<h3>ERD диаграмма БД</h3>
 			<p>
 				<div class="img">
-					<img src="img/Classes_v0.1.svg">
+					<img src="img/EDR.png">
 					<p>Диаграмма классов</p>
 				</div>
 			</p>

@@ -1,6 +1,8 @@
 <?php
-
+session_start();
+$passwordSalt = md5("соль");
 $mysqli = null;
+$messages = [];
 
 require_once 'core/model.php';
 require_once 'core/view.php';

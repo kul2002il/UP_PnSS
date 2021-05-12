@@ -15,18 +15,4 @@ class Model
 		}
 		$this->mysqli = $mysqli;
 	}
-
-	public function form($name)
-	{
-		$name = "form" . $name;
-		if(!isset($this->$name) || !($this->$name instanceof Form))
-		{
-			var_dump(gettype($this->$name));
-			throw new Exception("Форма $name отсутствует");
-		}
-		return $this->$name->formHtml();
-	}
-
-	public function init(){}
-	public function getData(){}
 }

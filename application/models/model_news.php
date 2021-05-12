@@ -1,47 +1,22 @@
 <?php
 
-class  Model_Portfolio extends Model
+class  Model_News extends Model
 {
-	protected $formNew;
-
-	public function __construct()
-	{
-		parent::__construct();
-		$this->formNew = new Form("newPin");
-		$this->formNew->addInput("Год", "year", "number");
-		$this->formNew->addInput("Проект", "site", "text");
-		$this->formNew->addInput("Описание", "description", "textarea");
-
-		$data = [];
-		if($this->formNew->validate($data))
-		{
-			print_r($data);
-		}
-	}
-
-	public function init()
-	{
-		$this->mysqli->query("
-			CREATE TABLE portfolio(
-				id INT AUTO_INCREMENT PRIMARY KEY,
-				year INT,
-				site VARCHAR(300) NOT NULL,
-				description TEXT
-			);
-		");
-	}
-
 	public function getData()
 	{
-		return $this->mysqli->query("SELECT * FROM portfolio;");
+		return $this->mysqli->query(
+			"SELECT *
+			FROM news
+			ORDER BY date DESC;
+		");
 	}
 
 	public function getProjectData($index)
 	{
 		$index = (int)$index;
 		$res = $this->mysqli->query(
-			"SELECT year, site, description
-			FROM portfolio
+			"SELECT *
+			FROM news
 			WHERE id = $index;
 			");
 		if (!$res)
@@ -63,8 +38,8 @@ class  Model_Portfolio extends Model
 		extract($valid);
 
 		$res = $this->mysqli->query(
-			"INSERT INTO portfolio (year, site, description) VALUES
-			('$year', '$site', '$description');
+			"INSERT INTO news (title, description) VALUES
+			('$title', '$description');
 		");
 
 		if (!$res)
@@ -88,9 +63,8 @@ class  Model_Portfolio extends Model
 		$index = (int)$index;
 
 		$res = $this->mysqli->query(
-			"UPDATE portfolio SET
-				year = $year,
-				site = '$site',
+			"UPDATE news SET
+				title = '$title',
 				description = '$description'
 			WHERE id = $index;
 		");
@@ -108,7 +82,7 @@ class  Model_Portfolio extends Model
 	{
 		$index = (int)$index;
 		$res = $this->mysqli->query(
-			"DELETE FROM portfolio
+			"DELETE FROM news
 			WHERE id = $index;
 			");
 		if (!$res)
@@ -133,25 +107,14 @@ class  Model_Portfolio extends Model
 			return "Отказано в доступе.";
 		}
 
-		if (!isset($data["year"]) ||
-			!isset($data["site"]) ||
+		if (!isset($data["title"]) ||
 			!isset($data["description"]) )
 		{
 			return "Нет обязательных полей.";
 		}
 
-		if (!preg_match("#\d\d\d\d#", $data["year"]))
-		{
-			return "Ошибка валидации: Неверный год.";
-		}
-		if (!preg_match('#^(http://|https://)?([0-9a-zA-Zа-яА-ЯёЁ]+\.){1,2}[0-9a-zA-Zа-яА-ЯёЁ]{2,6}/?$#', $data["site"]))
-		{
-			return "Ошибка валидации: Неверный URL";
-		}
-
 		return [
-			"year" => (int)$data["year"],
-			"site" => $data["site"],
+			"title" => $this->mysqli->real_escape_string($data["title"]),
 			"description" => $this->mysqli->real_escape_string($data["description"]),
 		];
 	}
