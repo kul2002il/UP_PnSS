@@ -1,5 +1,21 @@
+<?php
+$flagCanEdit = false;
+if(isset($_SESSION["user"]) && in_array($_SESSION["user"]["role"], [
+		"superuser",
+		"admin",
+	]))
+{
+	$flagCanEdit = true;
+}
+?>
+
 <h1><?=$data["news"]["title"]?></h1>
+<img src="<?=$data["news"]["image"]?>" alt="картинка">
 <p><?=$data["news"]["description"]?></p>
+
+<?php if($flagCanEdit) { ?>
+	<a href="/news/edit/<?=$data["news"]["id"]?>">Изменить</a>
+<?php } ?>
 
 <h3>Комментарии</h3>
 

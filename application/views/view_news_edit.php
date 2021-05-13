@@ -1,5 +1,5 @@
 <h1><?=$data["title"]?></h1>
-<form method="post">
+<form enctype="multipart/form-data" method="post">
 	<table>
 		<tr>
 			<td></td>
@@ -23,6 +23,14 @@
 			<td>
 				<textarea name="description" id="description" required
 				rows="8" cols="80"><?=$data["description"]?></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="image">Картинка</label>
+			</td>
+			<td>
+				<input type="file" name="image" id="image" accept="image/*">
 			</td>
 		</tr>
 		<tr>

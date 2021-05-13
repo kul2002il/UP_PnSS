@@ -9,12 +9,16 @@ if(isset($_SESSION["user"]) && in_array($_SESSION["user"]["role"], [
 }
 ?>
 <h1>Новости</h1>
+<?php if($flagCanEdit) { ?>
+	<a href="/news/add/">Добавить</a>
+<?php } ?>
 <div class="line">
 	<?php foreach($data as $row) { ?>
 		<article>
 			<h2>
 				<?=$row["title"]?>
 			</h2>
+			<img src="<?=$row["image"]?>" alt="картинка">
 			<div>
 				<?=$row["description"]?>
 			</div>

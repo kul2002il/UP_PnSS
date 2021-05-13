@@ -37,9 +37,14 @@ class  Model_News extends Model
 		}
 		extract($valid);
 
+		if(!$image)
+		{
+			return "нет картинки";
+		}
+
 		$res = $this->mysqli->query(
-			"INSERT INTO news (title, description) VALUES
-			('$title', '$description');
+			"INSERT INTO news (title, description, image) VALUES
+			('$title', '$description', '$image');
 		");
 
 		if (!$res)
@@ -62,10 +67,17 @@ class  Model_News extends Model
 
 		$index = (int)$index;
 
+		$changeImg = "";
+		if($image)
+		{
+			$changeImg = ",image = '$image'";
+		}
+
 		$res = $this->mysqli->query(
 			"UPDATE news SET
 				title = '$title',
 				description = '$description'
+				$changeImg
 			WHERE id = $index;
 		");
 
@@ -116,6 +128,7 @@ class  Model_News extends Model
 		return [
 			"title" => $this->mysqli->real_escape_string($data["title"]),
 			"description" => $this->mysqli->real_escape_string($data["description"]),
+			"image" => $data["image"],
 		];
 	}
 }

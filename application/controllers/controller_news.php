@@ -29,7 +29,11 @@ class Controller_News extends Controller
 		global $messages;
 		if (isset($_POST["addNews"]))
 		{
-			$res = $this->model->add($_POST);
+			$data = $_POST;
+			$data = array_merge($data, [
+				"image" => $this->saveImage("image"),
+			]);
+			$res = $this->model->add($data);
 			if($res === true)
 			{
 				header('Location: /news');
@@ -51,13 +55,20 @@ class Controller_News extends Controller
 		global $messages;
 		if (isset($_POST["editNews"]))
 		{
-			$res = $this->model->edit($_POST, $index);
+			$data = $_POST;
+			$data = array_merge($data, [
+				"image" => $this->saveImage("image"),
+			]);
+			$res = $this->model->edit($data, $index);
 			if($res === true)
 			{
-				header('Location: /news');
+				header("Location: /news/comment/$index");
 				return;
 			}
-			array_push($messages, $res);
+			else
+			{
+				array_push($messages, $res);
+			}
 		}
 
 		if (isset($_POST["deleteNews"]))
@@ -126,5 +137,21 @@ class Controller_News extends Controller
 			"comment" => $this->modelComments->getData($news["id"]),
 		];
 		$this->view->generate('view_news_one.php', $data);
+	}
+
+	private function saveImage($name)
+	{
+		$img = $_FILES[$name];
+		//var_dump($img["name"]);
+		if(!$img["name"])
+		{
+			//var_dump("Не сохранено.");
+			return false;
+		}
+		$dir = "files/image/";
+		$newName = $dir . time() . $img["name"];
+		move_uploaded_file($img["tmp_name"], $newName);
+		//var_dump("Cохранено.");
+		return "/" . $newName;
 	}
 }

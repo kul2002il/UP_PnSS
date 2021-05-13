@@ -37,6 +37,7 @@ CREATE TABLE news(
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	date DATETIME NOT NULL DEFAULT NOW(),
 	title VARCHAR(80) NOT NULL,
+	image VARCHAR(255) NOT NULL,
 	description TEXT NOT NULL
 );
 
@@ -73,16 +74,19 @@ INSERT INTO portfolio (year, site, description) VALUES
 (2021, 'http://ZopoMobileNew.ru', 'Переехаший сайт ZopoMobile.ru.');
 
 
-INSERT INTO news (title, description) VALUES
+INSERT INTO news (title, description, image) VALUES
 (
 	"Дан новый старт!",
-	"С данного момента стартует сайт по размещению партфолио."
+	"С данного момента стартует сайт по размещению партфолио.",
+	"/files/image/start.jpg"
 ),(
 	"Кавычки?",
-	"В данный момент проверяется возможность использовать двойные кавычки вместо одинарных в скриптах SQL запросов."
+	"В данный момент проверяется возможность использовать двойные кавычки вместо одинарных в скриптах SQL запросов.",
+	"/files/image/quotes2.png"
 ),(
 	"Кавычки!",
-	"Можно использовать двойные кавычки вместо одинарных в скриптах SQL запросов. Проверено."
+	"Можно использовать двойные кавычки вместо одинарных в скриптах SQL запросов. Проверено.",
+	"/files/image/quotes.jpg"
 );
 
 INSERT INTO comments (news, user, text) VALUES
