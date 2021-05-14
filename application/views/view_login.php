@@ -18,7 +18,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td><a href="/user/register">Регистрация</a></td>
+			<td></td>
 			<td>
 				<input type="submit" name="auth" value="Вход">
 			</td>

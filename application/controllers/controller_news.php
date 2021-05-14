@@ -141,18 +141,17 @@ class Controller_News extends Controller
 
 	private function saveImage($name)
 	{
-		if(!isset($_FILES[$name]))
-		{
-			return false;
-		}
 		$img = $_FILES[$name];
+		//var_dump($img["name"]);
 		if(!$img["name"])
 		{
+			//var_dump("Не сохранено.");
 			return false;
 		}
 		$dir = "files/image/";
 		$newName = $dir . time() . $img["name"];
 		move_uploaded_file($img["tmp_name"], $newName);
+		//var_dump("Cохранено.");
 		return "/" . $newName;
 	}
 }
